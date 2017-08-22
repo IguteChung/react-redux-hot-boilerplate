@@ -3,6 +3,7 @@ const html = (development) => {
     <html>
       <head>
         <title>React Redux Hot Boilerplate</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
         ${development ? '' : '<link rel="stylesheet" href="styles.css" />'}
       </head>
       <body>

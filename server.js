@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import express from 'express';
+import favicon from 'serve-favicon';
 import config from './webpack.config';
 import html from './html';
 
@@ -9,6 +10,9 @@ var compiler = webpack(config);
 
 const development = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || development ? 3000 : 8080;
+
+// serve favicon request in memory.
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
 
 if (development) {
   // for dev server.
