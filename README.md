@@ -34,17 +34,26 @@ This boilerplate provides a light-weight, flexible and up-to-date solutions for 
 
 |Name|Version|Description|
 |:--:|:----:|:----------|
-|React|v15.4.2|Single page app|
-|Redux Redux|v5.0.6|Data store|
-|React Router|v4.1.2|Page routing|
-|React Helmet|v5.1.3|Header management|
+|React|![react-npm]|Single page app|
+|Redux Redux|![redux-npm]|Data store|
+|React Router|![router-npm]|Page routing|
+|React Helmet|![helmet-npm]|Header management|
+
+[react-npm]: https://img.shields.io/badge/npm-v15.4.2-green.svg
+[redux-npm]: https://img.shields.io/badge/npm-v5.0.6-yellow.svg
+[router-npm]: https://img.shields.io/badge/npm-v4.1.2-green.svg
+[helmet-npm]: https://img.shields.io/badge/npm-v5.1.3-yellow.svg
 
 <h2 align="center">Dev-dependency</h2>
 
 |Name|Version|Description|
 |:--:|:----:|:----------|
-|Webpack|v2.2.0|Assets packaging|
-|React Hot Loader|v3.0.0-beta.6|HMR for React|
-|React Router|v4.1.2|Page routing|
-|CSS loader|v0.28.5|CSS loader|
-|Extract Text Webpack Plugin|v2.1.2|styles spliting|
+|Webpack|![webpack-npm]|Assets packaging|
+|React Hot Loader|![react-hot-npm]|HMR for React|
+|CSS loader|![css-loader-npm]|CSS loader|
+|Extract Text Webpack Plugin|![extract-text-npm]|styles spliting|
+
+[webpack-npm]: https://img.shields.io/badge/npm-v2.2.0-blue.svg
+[react-hot-npm]: https://img.shields.io/badge/npm-v3.0.0--beta.6-orange.svg
+[css-loader-npm]: https://img.shields.io/badge/npm-v0.28.5-orange.svg
+[extract-text-npm]: https://img.shields.io/badge/npm-v2.1.2-blue.svg
