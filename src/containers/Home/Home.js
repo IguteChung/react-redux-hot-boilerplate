@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppToolbar from '../../components/AppToolbar/AppToolbar';
 import AppDrawer from '../../components/AppDrawer/AppDrawer';
+import TabActivity from '../../components/TabActivity/TabActivity';
 import './Home.css';
 
 export default class Home extends Component {
@@ -15,6 +16,7 @@ export default class Home extends Component {
       <div className="home">
         <AppToolbar onClick={() => { this.setState({ open: true}); }} />
         <AppDrawer open={this.state.open}   />
+        <TabActivity />
       </div>
     );
   }
