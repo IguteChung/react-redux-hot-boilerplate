@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { RouteTransition, presets } from 'react-router-transition';
 import Home from './containers/Home/Home';
-import About from './containers/About/About';
 import NotFound from './containers/NotFound/NotFound';
 import './App.css';
 

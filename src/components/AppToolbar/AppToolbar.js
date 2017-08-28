@@ -11,7 +11,7 @@ const AppToolbar = props => (
   <div>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="contrast" aria-label="Menu">
+          <IconButton color="contrast" aria-label="Menu" onClick={props.onClick}>
             <MenuIcon />
           </IconButton>
           <Typography type="title" color="inherit" className="AppToolbar-flex">
