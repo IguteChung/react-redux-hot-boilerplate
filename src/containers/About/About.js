@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './About.css';
 
 const About = props => (
-  <div>
+  <div className="about">
     <h2 className="about-header">About</h2>
     <p>{`Welcome back ${props.counter} times!`}</p>
   </div>

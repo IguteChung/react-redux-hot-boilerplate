@@ -13,7 +13,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
         <h2 className="home-header">Home</h2>
         <p>{`Welcome back ${this.props.counter} times!`}</p>
       </div>
