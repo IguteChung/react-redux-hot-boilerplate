@@ -14,17 +14,12 @@ const App = () => (
         <Helmet>
           <meta name='description' content='Awesome React Redux Hot boilerplate' />
         </Helmet>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
         <RouteTransition
           pathname={location.pathname}
           {...presets.slideLeft}
         >
           <Switch key={location.key} location={location}>
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
             <Route component={NotFound} />
           </Switch>
         </RouteTransition>
