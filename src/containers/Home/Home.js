@@ -12,11 +12,13 @@ export default class Home extends Component {
     }
   }
   render() {
+    const id = this.props.match.params.id ? Number(this.props.match.params.id) : 0;
+    console.log('home ', this.props);
     return (
       <div className="home">
         <AppToolbar menu onClick={() => { this.setState({ open: true}); }} />
         <AppDrawer open={this.state.open} onClosed={() => this.setState({ open: false })}  />
-        <TabActivity />
+        <TabActivity id={id} />
       </div>
     );
   }

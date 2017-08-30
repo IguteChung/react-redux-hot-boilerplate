@@ -10,7 +10,7 @@ import './AppDrawer.css';
 
 const sideList = (
         <List className="AppDrawer-list" disablePadding>
-        <Link to="/milestone">
+        <Link to="/about">
         <ListItem button>
           <ListItemIcon>
             <InboxIcon />
@@ -18,7 +18,7 @@ const sideList = (
           <ListItemText primary="Management" />
         </ListItem>
         </Link>
-        <Link to="/milestone">
+        <Link to="/about">
         <ListItem button>
           <ListItemIcon>
             <StarIcon />
@@ -26,7 +26,7 @@ const sideList = (
           <ListItemText primary="Reminder" />
         </ListItem>
         </Link>
-        <Link to="/milestone">
+        <Link to="/about">
         <ListItem button>
           <ListItemIcon>
             <SendIcon />
@@ -34,7 +34,7 @@ const sideList = (
           <ListItemText primary="Setting" />
         </ListItem>
         </Link>
-        <Link to="/milestone">
+        <Link to="/about">
         <ListItem button>
           <ListItemIcon>
             <DraftsIcon />

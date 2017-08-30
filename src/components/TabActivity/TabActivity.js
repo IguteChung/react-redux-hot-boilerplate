@@ -12,17 +12,25 @@ function TabContainer(props) {
 }
 
 export default class TabActivity extends Component {
-  state = {
-    value: 0,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.id,
+    }
+  }
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
+  // componentWillReceiveProps(props) {
+  //   this.setState({
+  //     value: props.id,
+  //   });
+  // }
+
   render() {
     const { value } = this.state;
-
     return (
       <div>
         <AppBar position="static" color="default">
@@ -41,7 +49,7 @@ export default class TabActivity extends Component {
             }
           </Tabs>
         </AppBar>
-        <TabContainer><ActivityGrid /></TabContainer>
+        <TabContainer><ActivityGrid id={value} /></TabContainer>
       </div>
     );
   }
