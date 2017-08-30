@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: totspace
+  labels:
+    app: totspace
+    tier: web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    name: http
+    targetPort: 8080
+  selector:
+    app: totspace
+    tier: web
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: totspace
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: totspace
+        tier: web
+    spec:
+      containers:
+      - name: totspace
+        image: {image}
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+        command:
+          - "/bin/sh"
+          - "-c"
+          - "mkdir -p /etc/certs && gcsfuse {GCS_DEEPQ_SECRETS} /etc/certs/ && npm run start"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+          - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
