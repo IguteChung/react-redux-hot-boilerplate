@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
+import ActivityGrid from '../ActivityGrid/ActivityGrid';
 
 function TabContainer(props) {
   return (
@@ -40,7 +41,7 @@ export default class TabActivity extends Component {
             }
           </Tabs>
         </AppBar>
-        <TabContainer>{`Data ${value}`}</TabContainer>
+        <TabContainer><ActivityGrid /></TabContainer>
       </div>
     );
   }

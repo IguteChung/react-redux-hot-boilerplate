@@ -14,8 +14,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <AppToolbar onClick={() => { this.setState({ open: true}); }} />
-        <AppDrawer open={this.state.open}   />
+        <AppToolbar menu onClick={() => { this.setState({ open: true}); }} />
+        <AppDrawer open={this.state.open} onClosed={() => this.setState({ open: false })}  />
         <TabActivity />
       </div>
     );

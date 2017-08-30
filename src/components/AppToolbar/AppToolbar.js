@@ -4,6 +4,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
+import BackButton from 'material-ui-icons/ArrowBack';
 import MenuIcon from 'material-ui-icons/Menu';
 import './AppToolbar.css';
 
@@ -12,7 +13,7 @@ const AppToolbar = props => (
       <AppBar position="static">
         <Toolbar>
           <IconButton color="contrast" aria-label="Menu" onClick={props.onClick}>
-            <MenuIcon />
+            {props.menu ? <MenuIcon /> : <BackButton />}
           </IconButton>
           <Typography type="title" color="inherit" className="AppToolbar-flex">
             Totspace
