@@ -10,7 +10,7 @@ const App = () => (
   <Router>
     <div>
       <Helmet>
-        <meta name='description' content='Awesome React Redux Hot boilerplate' />
+        <meta name="description" content="Awesome React Redux Hot boilerplate" />
       </Helmet>
       <ul>
         <li><Link to="/">Home</Link></li>
