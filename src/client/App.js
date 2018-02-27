@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './containers/Home/Home';
 import About from './containers/About/About';
 import NotFound from './containers/NotFound/NotFound';
-import './App.css';
+import './styles/common.css';
+import './styles/bootstrap-grid.min.css';
 
 const App = () => (
   <Router>
-    <div>
+    <div className="container">
       <Helmet>
         <meta name="description" content="Awesome React Redux Hot boilerplate" />
       </Helmet>

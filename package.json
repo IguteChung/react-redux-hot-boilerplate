@@ -1,13 +1,13 @@
 {
-  "name": "FAQ",
+  "name": "react-redux-hot-boilerplate",
   "version": "1.0.0",
-  "description": "FAQ website",
+  "description": "React Redux Hot Boilerplate website",
   "scripts": {
-    "dev": "babel-node server.js",
+    "dev": "babel-node src/server/index.js",
     "lint": "eslint src",
     "prebuild": "rm -rf dist",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.production.js",
-    "start": "NODE_ENV=production babel-node server.js"
+    "build": "NODE_ENV=production webpack -p --config src/server/webpack.config.production.js",
+    "start": "NODE_ENV=production babel-node src/server/index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

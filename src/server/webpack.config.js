@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -10,13 +10,13 @@ module.exports = {
     // Enable HMR.
     'webpack-hot-middleware/client',
     // entrypoint of client app.
-    './src/index.js',
+    './src/client/index.js',
   ],
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/static/'
+    path: path.resolve(__dirname, '../../dist'),
+    publicPath: '/static/',
   },
 
   devtool: 'inline-source-map',
@@ -32,7 +32,7 @@ module.exports = {
       {
         // css loader.
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
