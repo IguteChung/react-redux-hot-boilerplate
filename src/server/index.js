@@ -17,9 +17,11 @@ app.use(favicon(path.join(__dirname, 'favicon.ico')));
 if (development) {
   // for dev server.
   const compiler = webpack(config);
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-  }));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: config.output.publicPath
+    })
+  );
   app.use(webpackHotMiddleware(compiler));
   app.get('*', (req, res) => res.send(html(development)));
 } else {

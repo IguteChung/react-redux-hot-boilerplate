@@ -14,8 +14,12 @@ const App = () => (
         <meta name="description" content="Awesome React Redux Hot boilerplate" />
       </Helmet>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
       </ul>
       <Switch>
         <Route exact path="/" component={Home} />

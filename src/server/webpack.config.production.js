@@ -27,9 +27,9 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
-        }),
-      },
+          use: 'css-loader'
+        })
+      }
     ]
   },
 
@@ -45,7 +45,7 @@ module.exports = {
 
     // tell the client app developement mode.
     new webpack.DefinePlugin({
-      __DEVELOPMENT__: false,
-    }),
+      __DEVELOPMENT__: false
+    })
   ]
 };

@@ -6,7 +6,6 @@ import { add } from '../../reducers/counter';
 import './Home.css';
 
 class Home extends Component {
-
   componentDidMount() {
     this.props.add();
   }
@@ -23,15 +22,15 @@ class Home extends Component {
 
 Home.propTypes = {
   counter: PropTypes.number,
-  add: PropTypes.func,
+  add: PropTypes.func
 };
 
 Home.defaultProps = {
   counter: 0,
-  add: () => {},
+  add: () => {}
 };
 
 export default connect(
   state => ({ ...state.counter }),
-  dispatch => bindActionCreators({ add }, dispatch),
+  dispatch => bindActionCreators({ add }, dispatch)
 )(Home);

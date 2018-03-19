@@ -11,13 +11,11 @@ const About = props => (
 );
 
 About.propTypes = {
-  counter: PropTypes.number,
+  counter: PropTypes.number
 };
 
 About.defaultProps = {
-  counter: 0,
+  counter: 0
 };
 
-export default connect(
-  state => ({ ...state.counter }),
-)(About);
+export default connect(state => ({ ...state.counter }))(About);

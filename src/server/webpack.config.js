@@ -10,13 +10,13 @@ module.exports = {
     // Enable HMR.
     'webpack-hot-middleware/client',
     // entrypoint of client app.
-    './src/client/index.js',
+    './src/client/index.js'
   ],
 
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../../dist'),
-    publicPath: '/static/',
+    publicPath: '/static/'
   },
 
   devtool: 'inline-source-map',
@@ -27,14 +27,14 @@ module.exports = {
         // js loader.
         test: /\.jsx?$/,
         use: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         // css loader.
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
 
   plugins: [
@@ -46,7 +46,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     // tell the client app developement mode.
     new webpack.DefinePlugin({
-      __DEVELOPMENT__: true,
-    }),
+      __DEVELOPMENT__: true
+    })
   ]
 };

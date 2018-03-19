@@ -4,7 +4,7 @@ export default function reducer(state = { counter: 0 }, action = {}) {
   switch (action.type) {
     case TYPE_ADD:
       return {
-        counter: state.counter + 1,
+        counter: state.counter + 1
       };
     default:
       return state;
@@ -13,6 +13,6 @@ export default function reducer(state = { counter: 0 }, action = {}) {
 
 export function add() {
   return {
-    type: TYPE_ADD,
+    type: TYPE_ADD
   };
 }
