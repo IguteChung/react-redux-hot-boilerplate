@@ -1,14 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('babel-polyfill');
+
+const root = path.resolve(__dirname, '../../');
 
 module.exports = {
   entry: ['babel-polyfill', './src/client/index.js'],
 
   output: {
     filename: 'static/bundle.js',
-    path: path.resolve(__dirname, '../../dist'),
+    path: path.resolve(root, './dist'),
     publicPath: '/'
   },
 
@@ -34,6 +37,20 @@ module.exports = {
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'React Redux Hot Boilerplate',
+      template: path.resolve(root, './src/server/index.html'),
+      favicon: path.resolve(root, './src/server/favicon.ico'),
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+      },
+      hash: true
+    }),
     // reduce the js file size.
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
@@ -41,7 +58,7 @@ module.exports = {
     }),
 
     // move the styles to an individual css file for parallelly downloading.
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('static/styles.css'),
 
     // tell the client app developement mode.
     new webpack.DefinePlugin({
