@@ -32,6 +32,15 @@ module.exports = {
           fallback: 'style-loader',
           use: 'css-loader'
         })
+      },
+      {
+        // file loader for images
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          context: path.resolve(root, './src/client')
+        }
       }
     ]
   },
