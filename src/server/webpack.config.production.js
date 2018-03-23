@@ -1,17 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('babel-polyfill');
 
 const root = path.resolve(__dirname, '../../');
 
 module.exports = {
+  mode: 'production',
+
   entry: ['babel-polyfill', './src/client/index.js'],
 
   output: {
     filename: 'static/bundle.js',
-    path: path.resolve(root, './dist'),
+    path: path.resolve(root, './dist/client'),
     publicPath: '/'
   },
 
@@ -28,10 +30,7 @@ module.exports = {
       {
         // css loader.
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         // file loader for images
@@ -56,18 +55,15 @@ module.exports = {
         html5: true,
         minifyCSS: true,
         removeComments: true,
-        removeEmptyAttributes: true,
+        removeEmptyAttributes: true
       },
       hash: true
     }),
-    // reduce the js file size.
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      comments: false
-    }),
 
     // move the styles to an individual css file for parallelly downloading.
-    new ExtractTextPlugin('static/styles.css'),
+    new MiniCssExtractPlugin({
+      filename: 'static/styles.css'
+    }),
 
     // tell the client app developement mode.
     new webpack.DefinePlugin({

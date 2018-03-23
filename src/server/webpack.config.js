@@ -1,10 +1,12 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const root = path.resolve(__dirname, '../../');
+const root = path.resolve(__dirname, '../../')
 
 module.exports = {
+  mode: 'development',
+
   entry: [
     // React HMR.
     'react-hot-loader/patch',
@@ -66,4 +68,4 @@ module.exports = {
       __DEVELOPMENT__: true
     })
   ]
-};
+}
